@@ -3,4 +3,5 @@
     <string name="action_add">添加一项</string>
     <string name="action_share">分享</string>
     <string name="action_clear">清空</string>
+    <string name="action_example">其他控件示例</string>
 </resources>

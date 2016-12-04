@@ -2,6 +2,7 @@ package xyz.imxqd.day_11;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ public class MainActivity extends Activity implements MyAdapter.OnItemClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<User> list = new ArrayList<>();
@@ -74,6 +76,9 @@ public class MainActivity extends Activity implements MyAdapter.OnItemClickListe
 
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
                 break;
+
+            case R.id.action_example:
+                startActivity(new Intent(this, WidgetActivity.class));
         }
         return true;
     }
