@@ -2,6 +2,7 @@ package xyz.imxqd.day_11;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -67,11 +68,21 @@ public class MainActivity extends Activity implements MyAdapter.OnItemClickListe
                 Toast.makeText(this, R.string.action_clear, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_share:
-                List<User> list = adapter.getCheckedUsers();
+                final List<User> list = adapter.getCheckedUsers();
                 new AlertDialog.Builder(this)
                         .setTitle("选中项")
                         .setMessage(list.toString())
-                        .setPositiveButton("确定", null)
+                        .setPositiveButton("分享", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // 隐式启动的演示
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("text/plain");
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "分享演示");
+                                intent.putExtra(Intent.EXTRA_TEXT, list.toString());
+                                startActivity(intent);
+                            }
+                        })
                         .show();
 
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
@@ -87,12 +98,15 @@ public class MainActivity extends Activity implements MyAdapter.OnItemClickListe
     public void onItemClick(User user, int pos) {
         Toast.makeText(this, "item:" + user.getName(), Toast.LENGTH_SHORT).show();
         adapter.remove(pos);
+        // 这里也可以使用adapter.notifyDataSetChanged()，
+        // 但这样会全部重新绘制，效率更低，而且没有动画
         adapter.notifyItemRemoved(pos);
     }
 
     @Override
     public void onIconClick(User user, int pos) {
         Toast.makeText(this, "icon:" + user.getName(), Toast.LENGTH_SHORT).show();
+        // AlertDialog的使用，很简单
         new AlertDialog.Builder(this)
                 .setTitle("详细信息")
                 .setMessage(user.detailString())
