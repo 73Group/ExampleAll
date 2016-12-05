@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Day_12</string>
+    <string name="bottom_home">首页</string>
+    <string name="bottom_applications">软件</string>
+    <string name="bottom_games">游戏</string>
+    <string name="bottom_rank">排行</string>
+    <string name="bottom_me">我</string>
+</resources>
