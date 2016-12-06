@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Day_13</string>
+    <string name="hint_username">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="btn_login">登录</string>
+    <string name="file_text">每个兼容 Android 的设备都支持可用于保存文件的共享“外部存储”。 该存储可能是可移除的存储介质（例如 SD 卡）或内部（不可移除）存储。 保存到外部存储的文件是全局可读取文件，而且，在计算机上启用 USB 大容量存储以传输文件后，可由用户修改这些文件。注意：如果用户在计算机上装载了外部存储或移除了介质，则外部存储可能变为不可用状态，并且在您保存到外部存储的文件上没有实施任何安全性。 所有应用都能读取和写入放置在外部存储上的文件，并且用户可以移除这些文件。在 Android 7.0 或更高版本中，如果您需要访问外部存储上的特定目录，请使用作用域目录访问。 作用域目录访问可简化您的应用访问标准外部存储目录（例如 Pictures 目录）的方式，并提供简单的权限 UI，清楚地详细介绍应用正在请求访问的目录。</string>
+    <string name="btn_save_to_file">保存到文件</string>
+    <string name="btn_read_from_file">从文件读取</string>
+</resources>
