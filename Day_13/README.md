@@ -31,12 +31,13 @@ Android中的文件操作与Java中的文件操作与没有什么本质上的不
  getExternalCacheDir(); //获取外置存储卡中的供本应用使用的缓存目录，Context的方法
  getExternalFileDir(null); //获取外置存储卡中的供本应用使用的私有目录，Context的方法
 ```
-（5） 具体的文件IO操作完全跟Java的文件IO操作一致，如果你忘了，你可以复习一下。文件操作的Android官方教程：
+（5） 具体的文件IO操作完全跟Java的文件IO操作一致，如果你忘了，你可以复习一下。
+文件操作的Android官方教程：
 https://developer.android.com/training/basics/data-storage/files.html
 
 
 
- ### 2.键值对存取
+### 2.键值对存取
  SharedPreferences 是Android提供的一种方便快捷地保存和读取键值对的接口。它本质上是在应用程序私有目录下生成对应的xml文件保存键值对操作，但Android系统优化的其IO性能，并且我们不需要自己去解析xml文件。
 
 >  SharedPreferences 类提供了一个通用框架，以便您能够保存和检索原始数据类型的永久性键值对。 您可以使用
