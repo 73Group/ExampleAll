@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">便签</string>
+    <string name="action_add">添加</string>
+    <string name="add_and_view_content">内容</string>
+    <string name="action_done">完成</string>
+    <string name="action_del">删除</string>
+    <string name="action_share">分享</string>
+    <string name="text_empty">当前还没有记录</string>
+    <string name="action_all">全选</string>
+</resources>
