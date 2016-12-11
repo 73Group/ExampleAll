@@ -63,7 +63,7 @@ public class NoteDB {
         ArrayList<Note> list = new ArrayList<>();
         SQLiteDatabase sdb = helper.getReadableDatabase();
         Cursor cursor =
-        sdb.rawQuery("SELECT * FROM " + Constants.DB_TABLE_NOTE, null);
+        sdb.rawQuery("SELECT * FROM " + Constants.DB_TABLE_NOTE + " ORDER BY time DESC", null);
         while (cursor.moveToNext()) {
             Note note = new Note();
             note.setId(cursor.getInt(Constants.DB_COL_ID_INDEX));
