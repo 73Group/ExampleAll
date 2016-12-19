@@ -48,6 +48,28 @@ public class Database {
         database.close();
     }
 
+    public void deleteUser(String userName) {
+        SQLiteDatabase database = helper.getWritableDatabase();
+        database.delete("user", "user_name = ?", new String[] {userName});
+        // 也可以这么写
+        // database.execSQL("delete from user where user_name = " + userName);
+        // 或者这么写
+        // database.execSQL("delete from user where user_name = ?", new String[]{userName});
+        database.close();
+    }
+
+    public void updatePwd(String userName, String pwd) {
+        SQLiteDatabase database = helper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("password", pwd);
+        database.update("user", values, "where user_name = ?" , new String[] {userName});
+        // 也可以这么写
+        // database.execSQL("update user set password = ? where user_name = ?", new String[]{pwd, userName});
+        // 或者这么写
+        // database.execSQL(String.format("update user set password = %s where user_name = %s", pwd, userName));
+        database.close();
+    }
+
     public ArrayList<String> getAllUserName() {
         ArrayList<String> userNameList = new ArrayList<>();
         SQLiteDatabase database = helper.getReadableDatabase();
