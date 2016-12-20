@@ -8,6 +8,7 @@ import xyz.imxqd.day_15.utils.Constants;
 
 /**
  * Created by imxqd on 2016/12/10.
+ * 继承SQLiteOpenHelper来实现对数据库的创建，打开和版本管理等
  */
 
 public class NoteDBHelper extends SQLiteOpenHelper {
@@ -20,6 +21,7 @@ public class NoteDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // 这里创建了一张表
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ Constants.DB_TABLE_NOTE +
                 "(" + Constants.DB_COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 Constants.DB_COL_TIME + " LONG, " +

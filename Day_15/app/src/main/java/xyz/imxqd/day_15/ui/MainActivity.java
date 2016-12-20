@@ -41,6 +41,9 @@ public class MainActivity extends Activity implements NoteListAdapter.OnItemEven
         initEmptyView();
     }
 
+    /**
+     * 这个方法的作用是，当RecyclerView为空时，显示一个提示的View，否则不显示
+     */
     private void initEmptyView() {
         if (mAdapter.getItemCount() == 0) {
             findViewById(R.id.empty_view).setVisibility(View.VISIBLE);
@@ -77,6 +80,9 @@ public class MainActivity extends Activity implements NoteListAdapter.OnItemEven
     public boolean onItemLongClick(Note note, NoteListAdapter.NoteItemViewHolder holder) {
         note.setSelected(true);
         mAdapter.notifyItemChanged(holder.getAdapterPosition());
+        // ActionMode是一种临时占用ActionBar来显示菜单项的一种模式
+        // 这种模式的菜单内容一般是基于用户选择的内容的，所以叫做上下文菜单
+        // ps: 上下文菜单不止这一种，但这些不属于重点内容，以后有机会再说
         startActionMode(new ActionMode.Callback() {
             boolean isSelectedAll = false;
             @Override

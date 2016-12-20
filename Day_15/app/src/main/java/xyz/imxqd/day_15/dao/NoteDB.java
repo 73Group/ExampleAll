@@ -12,6 +12,7 @@ import xyz.imxqd.day_15.utils.Constants;
 
 /**
  * Created by imxqd on 2016/12/10.
+ * 数据库操作的封装类
  */
 
 public class NoteDB {

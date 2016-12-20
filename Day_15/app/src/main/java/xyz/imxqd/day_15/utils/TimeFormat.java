@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * Created by imxqd on 2016/12/10.
+ * 时间格式化的工具类
  */
 
 public class TimeFormat {

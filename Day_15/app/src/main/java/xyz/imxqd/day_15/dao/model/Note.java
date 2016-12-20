@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 /**
  * Created by imxqd on 2016/12/10.
+ * 数据库记录模型类
  */
 
 public class Note implements Parcelable {
