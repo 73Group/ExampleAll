@@ -12,6 +12,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
 
     // 以这种方式直接创建的Handler运行在当前线程中，Activity的线程是主线程，所以它可以对UI进行操作
+    // 注意不要太死板，你也可以直接通过自定义类继承Handler，覆盖重写handleMessage方法
+    // 类似于下面这样
+    //    class MyHandler extends Handler {
+    //        @Override
+    //        public void handleMessage(Message msg) {
+    //        }
+    //    }
+
     private Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
